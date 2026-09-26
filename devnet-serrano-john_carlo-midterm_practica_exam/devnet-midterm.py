@@ -1,33 +1,38 @@
 import search, addel
 
 def choice():
-    print("\n=== Contact List ===")
-    search.display_contacts(contacts)
+    print("\n=== Movie List ===")
+    search.display_menu(movies)
 
-    print("\n=== Main Menu ===")
-    print("1. Add/Remove Contact\n2. Contact List\n3. Exit")
-    decision = int(input("Choose(1-3): "))
+    print("\n=== Movie Collection Manager ===")
+    print("1. Add a Movie")
+    print("2. View all Movies")
+    print("3. Count watched vs unwatched")
+    print("4. Find a Movie")
+    print("5. Remove a Movie")
+    print("6. Exit")
+    decision = int(input("Choose an option: "))
     return decision
 
 
-contacts = [
+movies = [
     {
-        "Name" : "Jerms",
-        "Contact Number" : "0928906123"
+        "Movie Name" : "The Shawshank Redemption",
+        "Movie Status" : "Watched"
     },
 
     {
-        "Name" : "Andrei",
-        "Contact Number" : "12345"
+        "Name" : "The Godfather",
+        "Movie Status" : "watched"
     },
 
     {
-        "Name" : "Marius",
-        "Contact Number" : "999"
+        "Name" : "The Dark Knight",
+        "Movie Status" : "Unwatched"
     },
     {
-        "Name" : "Martin",
-        "Contact Number" : "998"
+        "Name" : "The Godfather Part II",
+        "Movie Status" : "Unwatched"
     }
 ]
 
@@ -36,8 +41,8 @@ doing = True
 while doing == True:
     decision = choice()
     if decision == 1:
-        contacts = addel.display_main(contacts)
+        movies = addel.display_main(movies)
     elif decision == 2:
-        search.display_main(contacts)
+        search.display_main(movies)
     elif decision == 3:
         doing = False
